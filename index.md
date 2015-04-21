@@ -8,6 +8,7 @@ tagline: Clean your data!
 ## Goals/Objectives
 
 After this lesson, you will:
+
   - understand methods for sanitizing data
   - be familiar with symptoms of dirty data
   - know the benefits of clean data
