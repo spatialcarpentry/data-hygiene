@@ -29,11 +29,15 @@
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+          <a class="brand" href="{{ site.site_root }}">{{ site.title }}</a>
           <ul class="nav">
-            {% assign pages_list = site.pages %}
+            <!--{% assign pages_list = site.pages %}
             {% assign group = 'navigation' %}
-            {% include JB/pages_list %}
+            {% include JB/pages_list %}-->
+            <li><a href="http://spatialcarpentry.github.io/about.html">About</a></li>
+            <li><a href="http://spatialcarpentry.github.io/lessons.html">Lessons</a></li>
+            <li><a href="http://spatialcarpentry.github.io/workshops.html">Workshops</a></li>
+            <li><a href="http://www.iplantcollaborative.org/" target="_blank">iPlant Collaborative</a></li>
           </ul>
         </div>
       </div>
@@ -46,7 +50,7 @@
       </div>
 
       <footer>
-        <p>&copy; {{ site.author.name }} 2012 
+        <p>&copy; <a href="http://www.iplantcollaborative.org/">iPlant Collaborative</a>, {{ site.author.name }} 
           with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
           and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
         </p>

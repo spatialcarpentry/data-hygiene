@@ -9,13 +9,13 @@ highlighter: pygments
 # so be sure to set them if your theme uses them.
 #
 title : Spatial Data Carpentry
-tagline: Site Tagline
+tagline: 
 author :
-  name : Nathan Casler
+  name : Nathan Casler & Daniel Guaderrama
   email : npcasler@email.arizona.edu
   github : spatialcarpentry
-  twitter : username
-  feedburner : feedname
+#  twitter : username
+#  feedburner : feedname
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -26,6 +26,11 @@ author :
 # Finally if you are pushing to a GitHub project page, include the project name at the end.
 #
 production_url : http://spatialcarpentry.github.io
+
+ # for header-home link in default.html
+site_root : /
+ 
+baseurl : http://spatialcarpentry.github.io/
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
