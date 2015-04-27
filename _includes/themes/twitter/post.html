@@ -30,7 +30,7 @@
     <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>-->
 
     <ul class="posts">
-      <h4>Lessons</h4>
+      <h4>Contents</h4>
       {% for post in site.posts %}
         <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}

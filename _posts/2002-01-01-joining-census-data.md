@@ -2,7 +2,7 @@
 title: "Census Exercise"
 layout: post
 category : Clean your Data
-tagline: "Supporting tagline"
+tagline: 
 tags : [applications, qgis, quantumgis]
 ---
 

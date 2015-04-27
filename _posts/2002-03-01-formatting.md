@@ -2,7 +2,7 @@
 title: "Data Formatting"
 layout: post
 category : Clean your Data
-tagline: "Supporting tagline"
+tagline: 
 tags : [wrangling]
 ---
 
