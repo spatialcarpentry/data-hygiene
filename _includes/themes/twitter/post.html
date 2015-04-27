@@ -29,8 +29,19 @@
     <!--<h4>Published</h4>
     <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>-->
 
+    <ul class="lessons">
+      <h4>Lessons</h4>
+      <li><a href="http://spatialcarpentry.github.io/setup/">Setup</a></li>
+      <li><a href="http://spatialcarpentry.github.io/basics/">Basics</a></li>
+      <li><a href="http://spatialcarpentry.github.io/data-collection/">Data Collection</a></li>
+      <li><a href="http://spatialcarpentry.github.io/data-hygiene/">Data Hygiene</a></li>
+      <li><a href="http://spatialcarpentry.github.io/spatial-analysis/">Spatial Analysis</a></li>
+      <li><a href="http://spatialcarpentry.github.io/cartography/">Cartography</a></li>
+    </ul>
+
     <ul class="posts">
       <h4>Contents</h4>
+      <span class="post-nav-title">{{ site.repo_name }}</span>
       {% for post in site.posts %}
         <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
