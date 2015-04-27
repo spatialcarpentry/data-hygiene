@@ -39,13 +39,13 @@
       <li><a href="http://spatialcarpentry.github.io/cartography/">Cartography</a></li>
     </ul>
 
-    <ul class="posts">
+    <ol class="posts">
       <h4>Contents</h4>
       <span class="post-nav-title">{{ site.repo_name }}</span>
       {% for post in site.posts %}
         <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
         {% endfor %}
-    </ul>
+    </ol>
 
   {% unless page.tags == empty %}
     <h4>Tags</h4>
