@@ -30,7 +30,7 @@ production_url : http://spatialcarpentry.github.io
  # for header-home link in default.html
 site_root : /
  
-baseurl : http://spatialcarpentry.github.io/
+#baseurl : http://spatialcarpentry.github.io/
 
 # All Jekyll-Bootstrap specific configurations are namespaced into this hash
 #
