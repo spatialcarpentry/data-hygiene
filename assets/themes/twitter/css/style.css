@@ -30,6 +30,18 @@ img {
   max-width: 100%;
 }
 
+/* table with no top border (horizontal line splitting <tr>) */
+.table-no-border td {
+  border-top: none !important;
+}
+/* change content link colors */
+/*.span10 a {
+  color: #338888;
+}
+.span10 a:hover {
+  color: #335588;
+}
+*/
 /* post.html side-nav */
 .post-nav-title {
   line-height: 22px;
