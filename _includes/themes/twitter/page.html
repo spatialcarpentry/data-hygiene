@@ -3,7 +3,26 @@
 </div>
 
 <div class="row">
-  <div class="span14">
+  <div class="span10">
     {{ content }}
+  </div>
+  <div class="span4">
+    <ul class="lessons">
+      <h4>Lessons</h4>
+      <li><a href="http://spatialcarpentry.github.io/setup/">Setup</a></li>
+      <li><a href="http://spatialcarpentry.github.io/basics/">Basics</a></li>
+      <li><a href="http://spatialcarpentry.github.io/data-collection/">Data Collection</a></li>
+      <li><a href="http://spatialcarpentry.github.io/data-hygiene/">Data Hygiene</a></li>
+      <li><a href="http://spatialcarpentry.github.io/spatial-analysis/">Spatial Analysis</a></li>
+      <li><a href="http://spatialcarpentry.github.io/cartography/">Cartography</a></li>
+      <li><a href="http://spatialcarpentry.github.io/data-sharing/">Data Sharing</a></li>
+    </ul>
+    {% unless page.tags == empty %}
+      <h4>Tags</h4>
+      <ul class="tag_box">
+      {% assign tags_list = page.tags %}
+      {% include JB/tags_list %}
+      </ul>
+    {% endunless %}  
   </div>
 </div>
