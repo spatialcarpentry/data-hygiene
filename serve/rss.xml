@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title>Spatial Data Carpentry</title>
+        <description>Spatial Data Carpentry - Nathan Casler & Daniel Guaderrama</description>
+        <link>http://spatialcarpentry.github.io</link>
+        <link>http://spatialcarpentry.github.io</link>
+        <lastBuildDate>2015-05-08T12:00:47-07:00</lastBuildDate>
+        <pubDate>2015-05-08T12:00:47-07:00</pubDate>
+        <ttl>1800</ttl>
+
+
+        <item>
+                <title>Overview</title>
+                <description>&lt;p&gt;The objectives of this module are: - get familiar with spatial data types - understand what a projection is - recognize the difference between raster and vector data - understand basics of scale, resolution and scope&lt;/p&gt;</description>
+                <link>http://spatialcarpentry.github.io/Clean your data/overview</link>
+                <guid>http://spatialcarpentry.github.io/Clean your data/overview</guid>
+                <pubDate>2002-12-31T00:00:00-07:00</pubDate>
+        </item>
+
+        <item>
+                <title>Data Hygiene</title>
+                <description>&lt;h4 id='prerequisites_intro_to_spatial_data_data_collection'&gt;&lt;strong&gt;Pre-requisites&lt;/strong&gt; Intro to Spatial Data, Data Collection&lt;/h4&gt;
+
+&lt;h4 id='objectives'&gt;&lt;strong&gt;Objectives&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;- Understand how to clean datasets - Recognize issues in our datasets&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h1 id='data_hygiene'&gt;Data Hygiene&lt;/h1&gt;
+
+&lt;p&gt;In tutorials, and exercises it is common to receive prepared data sets which will easily fit into a workflow. Unfortunately, in real life, data comes in all shapes and sizes, and more often than not, the data we need has quality, consistency or format issues. These can be products of data entry, sensor calibrations, or legacy formats.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id='data_janitor_someone_has_to_do_it'&gt;Data Janitor: Someone has to do it&lt;/h2&gt;
+
+&lt;p&gt;It is important to know how to clean up the data sets we download, if we hope to make our workflows reproducible.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id='keep_a_clean_workspace'&gt;Keep a clean workspace&lt;/h2&gt;
+
+&lt;p&gt;Its hard to keep anything clean in a dirty kitchen. The same principle applies to our workspaces. If we are testing pieces of a workflow, it will be difficult to prevent ourself from creating an abundance of files, but the difference between a clean workspace and a messy one can be as simple as using standards with our naming conventions.&lt;/p&gt;
+
+&lt;p&gt;If we find workspace starts to look like:&lt;/p&gt;
+&lt;div&gt;
+  &lt;pre&gt;&lt;code class='bash'&gt;data.csv
+data_1.csv
+data-1.csv
+data1.csv
+data3.csv
+data_REAL.csv
+dataREAL_1.csv
+data_processed.csv
+data_FINAL.csv
+USE_THIS_data.csv&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;We might be guilty of data negligence.&lt;/p&gt;
+
+&lt;p&gt;If we are doing testing, it is good practice to create a scratch(temp) workspace to hold all of the intermediate files being created.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id='naming_standards'&gt;Naming Standards&lt;/h2&gt;
+
+&lt;p&gt;It is also good practice to keep with a consistent naming structure to prevent from confusing ourself when we go looking for the right file 6 months from now.&lt;/p&gt;
+
+&lt;p&gt;There are a variety of ways to name our files, and the one use is our own choice as long as we use it consitently&lt;/p&gt;
+
+&lt;p&gt;Here are a few examples:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CamelCase&lt;/strong&gt; &lt;div&gt;
+  &lt;pre&gt;&lt;code class='bash'&gt;myCoolFile.csv&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;snake_case&lt;/strong&gt; &lt;div&gt;
+  &lt;pre&gt;&lt;code class='bash'&gt;my_cool_file.csv&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;spinal-case&lt;/strong&gt; &lt;div&gt;
+  &lt;pre&gt;&lt;code class='bash'&gt;my-cool-file.csv&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Train-Case&lt;/strong&gt; &lt;div&gt;
+  &lt;pre&gt;&lt;code class='bash'&gt;My-Cool-File.csv&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SCREAMING_SNAKE_CASE&lt;/strong&gt; &lt;div&gt;
+  &lt;pre&gt;&lt;code class='bash'&gt;MY_COOL_FILE.csv&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id='keep_it_simple'&gt;Keep it simple&lt;/h2&gt;
+
+&lt;p&gt;If we have a lot of similar data, it can be easy for us to stuff everything into a single table that we can scan through. This can be good when datasets are still relatively small, but once we are dealing with 30+ columns it can become a huge pain to understand our datasets.&lt;/p&gt;
+
+&lt;p&gt;Once our datasets start growing, we should check to make sure we actually need all the data we have. If we don&amp;#8217;t, it can be easy to become a data hoarder.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Just because we can fit everything doesn&amp;#8217;t mean we should.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;These extra columns can not only make our data hard to read, but it can also make our data less reliable, more redundant, and slower to process.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id='data_redundancy'&gt;Data Redundancy&lt;/h2&gt;
+
+&lt;p&gt;Keeping redundant data in your dataset can seem like a good idea in case we mess up one column or row, then we can copy/paste the original data. This safeguard can introduce inconsistency and corruption into our data if we are not careful.&lt;/p&gt;
+&lt;br /&gt;
+&lt;p&gt;| 1 || 67 || 19.4 | | 2 || 80 || 26.7 | | 3 || 89.6 || 32 | | 4 || &lt;em&gt;45&lt;/em&gt; || &lt;em&gt;45&lt;/em&gt; | | 5 || 33.8 || 1 |&lt;/p&gt;
+
+&lt;p&gt;In the table above, there is a temp column and a tempCel column. At first glance it could be easy to tell that the first temp column is Fahrenheit and the second is Celsius. An issue with redundancy comes when one column is updated and the other is not. If we don&amp;#8217;t have information on which column is more reliable, we can only guess. These guesses become harder as datasets become larger and the relationships between the redundant data is more complex.&lt;/p&gt;</description>
+                <link>http://spatialcarpentry.github.io/Clean your Data/data-cleaning</link>
+                <guid>http://spatialcarpentry.github.io/Clean your Data/data-cleaning</guid>
+                <pubDate>2002-12-30T00:00:00-07:00</pubDate>
+        </item>
+
+        <item>
+                <title>Data Formatting</title>
+                <description>&lt;h4 id='prerequisites_intro_to_spatial_data_data_collection'&gt;&lt;strong&gt;Pre-requisites:&lt;/strong&gt; Intro to Spatial Data, Data Collection&lt;/h4&gt;
+
+&lt;h4 id='objectives'&gt;&lt;strong&gt;Objectives:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;- Understanding how to wrangle or prepare your data - Recognize common methods to sptail data wrangling&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h1 id='data_formatting'&gt;Data Formatting&lt;/h1&gt;
+
+&lt;p&gt;Data manipulation can be a simple endeavour if the data inputs come in the same or compatible formats. Data sources will usually have a specific format they use for their data which can make it easy to use work with their datasets. Unfortunately, when we gather data from various sources, we are usually given several different formats to data to deal with. Data wrangling is the process of manipulating and reformatting disparate data sources into compatible datasets. Data wrangling makes proper analysis/modeling possible. There are several methods common to spatial data wrangling some of which are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Reprojection - Conversion from one projection coordinate system to another&lt;/li&gt;
+
+&lt;li&gt;Rasterization/Vectorization - Conversion from raster dataset to vector and vice versa&lt;/li&gt;
+
+&lt;li&gt;Extent Definition - Delineates the bounding box for a dataset, all data outside the box will become null&lt;/li&gt;
+
+&lt;li&gt;Reclassification - Assigns categorical values to a field based on a the contained values&lt;/li&gt;
+
+&lt;li&gt;Spatial Joins - Merges datasets based on spatial proximity/overlay&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These methods can be performed using a variety of tools depending on the specific needs of the dataset. Here are a few typical choices to aide in data wrangling:&lt;/p&gt;
+&lt;br /&gt;&lt;hr /&gt;
+&lt;h2 id='exercise'&gt;Exercise&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Set project projection to EPSG:2927&lt;br /&gt;&lt;br /&gt; Before starting any project in a GIS program, you should first set the project projection to make sure your data comes in with the same extent. &lt;br /&gt;If you don&amp;#8217;t set the project&amp;#8217;s projection, the program will use the projection of the first layer added or EPSG:4326.&lt;br /&gt;&lt;br /&gt; You can set the projection with the following steps:&lt;br /&gt;&lt;br /&gt; &lt;img alt='projectProperties' class='screen-shot' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/qgis-project-properties.png' /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In the top navbar go Project &amp;gt; Project Properties&lt;/li&gt;
+
+&lt;li&gt;Select CRS in the Left menu&lt;/li&gt;
+
+&lt;li&gt;Check &lt;em&gt;Enable On-the-fly CRS transformation&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;Using the Filter, search &lt;em&gt;2927&lt;/em&gt; and select &lt;em&gt;NAD83(HARN)/Washington South(ftUS) EPSG:2927&lt;/em&gt; from the List of Projections.&lt;/li&gt;
+
+&lt;li&gt;Apply and OK to save changes.&lt;br /&gt; &lt;img alt='projection' class='screen-shot' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/qgis-projection.png' /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Add the US States shapefile&lt;br /&gt;&lt;br /&gt; Since our project is directed at the state of Washington. We should extract the Washington state boundary for our study. The GADM project provides high-quality boundary data on country,state and county levels. We can use the US-state level dataset to get the Washington boundary. &lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Select &lt;em&gt;Add Vector Layer&lt;/em&gt; in the left toolbar&lt;/li&gt;
+
+&lt;li&gt;Browse to the USA_adm1.shp layer from the iPlant Data Store&lt;br /&gt; &lt;img alt='USAStates' class='screen-shot' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/usa-states.png' /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Create a layer for the state of Washington&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Within the Layers List, click on USA_adm1 to activate layer tools.&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Select Single Feature tool:&lt;br /&gt;&lt;em&gt;Menu Bar &gt; View &gt; Select &gt; Select Single Feature&lt;/em&gt; OR&lt;br /&gt;in the top toolbar, select &lt;em&gt;Select Single Feature&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Click on the state of Washington to select it&lt;br /&gt; &lt;img alt='washington-selected' class='screen-shot' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/washington-selected.png' /&gt;&lt;/p&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Right click on the USA_adm1 layer and select &lt;em&gt;Save Selection As&amp;#8230;&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Format: ESRI Shapefile&lt;/li&gt;
+
+&lt;li&gt;Save as: washington.shp&lt;/li&gt;
+
+&lt;li&gt;Encoding: UTF-8&lt;/li&gt;
+
+&lt;li&gt;CRS: + Selected CRS + Browse &amp;gt; &lt;em&gt;NAD83(HARN)/Washington South (ftUS) EPSG:2927&lt;/em&gt;&lt;br /&gt; &lt;img alt='saveWashington' class='screen-shot' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/save-washington.png' /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Load the new washington layer&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Select &lt;em&gt;Add Vector Layer&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;Browse to the new washington layer and click &lt;em&gt;Open&lt;/em&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Remove the USA_adm1 layer from the project &lt;br /&gt; Now that we have the Washington layer, we can get rid of the U.S. layer. &lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Right click the layer in the table of contents&lt;/li&gt;
+
+&lt;li&gt;Select &lt;em&gt;Remove&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Add the DEM layer from the iPlant data store&lt;br /&gt; DEMs or &lt;em&gt;Digital Elevation Models&lt;/em&gt; are very useful for establishing topological context in a map. DEMs generally come as a raster dataset that consists of elevation values. There are several different byproducts that can be created from DEMs.&lt;br /&gt;&lt;br /&gt; This DEM was taken from the GTOPO30 satellite data.&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In the left toolbar, select &lt;em&gt;Add Raster Layer&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;Select &lt;em&gt;source_files/W140N90.DEM&lt;/em&gt;&lt;br /&gt; &lt;img alt='demLoad' class='screen-shot' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/dem-load.png' /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;Project the dem to EPSG:2927&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;In the top menu, go to Raster &amp;gt; Projections &amp;gt; Warp (Reproject)&lt;/li&gt;
+
+&lt;li&gt;Use the following options&lt;/li&gt;
+
+&lt;li&gt;Input File: &lt;em&gt;W140N90&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;Output File: &lt;em&gt;secondary_files/dem-project.tif&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;Source SRS: &lt;em&gt;EPSG:4326&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;Target SRS: &lt;strong&gt;2927&lt;/strong&gt;&lt;br /&gt; &amp;#160;&amp;#160;&amp;#160;&amp;#160;&lt;strong&gt;NOTE&lt;/strong&gt;: When searching for an SRS, you MUST click on SRS in the bottom list otherwise you will not actually be selecting an SRS&lt;/li&gt;
+
+&lt;li&gt;Resampling Method: &lt;em&gt;Near&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;No data values: &lt;em&gt;0&lt;/em&gt;&lt;/li&gt;
+
+&lt;li&gt;Be sure to click CLOSE and not OK when exiting tools. Clicking OK will rerun the tool. &lt;img alt='projectDEM' class='screen-shot' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/project-dem.png' /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Important!&lt;/strong&gt; Save you current project workspace in your project directory. Saving will maintain the configuration of your project workspace. You will be using this project workspace for the following lessons.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id='continue_to_the_next_lesson'&gt;Continue to the next lesson&amp;#8230;&lt;/h3&gt;</description>
+                <link>http://spatialcarpentry.github.io/Clean your Data/formatting</link>
+                <guid>http://spatialcarpentry.github.io/Clean your Data/formatting</guid>
+                <pubDate>2002-03-01T00:00:00-07:00</pubDate>
+        </item>
+
+        <item>
+                <title>Census Exercise</title>
+                <description>&lt;h2 id='what_this_exercise_covers'&gt;What this exercise covers:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Classify data field types for CSV&lt;/li&gt;
+
+&lt;li&gt;Import CSV into QGIS&lt;/li&gt;
+
+&lt;li&gt;Import vector layer&lt;/li&gt;
+
+&lt;li&gt;Join CSV to vector layer&lt;/li&gt;
+
+&lt;li&gt;Save vector layer with joined CSV&lt;/li&gt;
+
+&lt;li&gt;Field calculator&lt;/li&gt;
+
+&lt;li&gt;Symbolize vector&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='data'&gt;Data&lt;/h2&gt;
+
+&lt;p&gt;Data for this exercise is located at iPlant Datastore: Community Data/aegis/Spatial-bootcamp/Exercise_2/&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;home-values.zip&lt;/li&gt;
+
+&lt;li&gt;housing-units.zip&lt;/li&gt;
+
+&lt;li&gt;tl_2014_53_tracts.zip&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id='procedures'&gt;Procedures&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Download Exercise_2 data and unpack each zip file:&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Unpack zip files' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-unzipped.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Import Census Tracts shapefile &lt;strong&gt;tl_2014_53_tract.shp&lt;/strong&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Add vector layer' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/add-vector.png' /&gt;.&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Washington Census tracts' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-1.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Rename tl_2014_53_tract to census-tracts:&lt;br /&gt;&lt;br /&gt;&lt;em&gt;Right-click layer &amp;gt; Rename &amp;gt; census-tracts&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;Open the census-tracts &lt;strong&gt;Attribute table&lt;/strong&gt; and locate a column that could possibly be unique to each Census tract used for joining (HINT: it&amp;#8217;s GEOID):&lt;br /&gt;&lt;br /&gt;&lt;em&gt;Right-click census-tracts (layer list) &amp;gt; Attribute table&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;Close the Attribute table once you&amp;#8217;ve located the primary key.&lt;br /&gt;&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Washington tract attributes' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-2.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Navigate to your Exercise_2 directory and open housing-units.csv and inspect the data for columns to use for our joins (primary key). HINT: it&amp;#8217;s GEO.id2.&lt;br /&gt;&lt;br /&gt;Reminder: We can only join data (tabular join) with &lt;em&gt;exact same&lt;/em&gt; columns. See the tables below:&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Locate similar columns' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-5.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Clean the data. For the purposes of this exercise, we do not need the removed data. Our objective is to join data and visualize (with minimal data wrangling). In LibreOffice, highlight the row/column, right-click and Delete Selected Columns. Excel should be similar.&lt;br /&gt;&lt;br /&gt; For &lt;strong&gt;housing-units.csv&lt;/strong&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Remove the second row containing the annotations (subheader).&lt;/li&gt;
+
+&lt;li&gt;Delete the columns: GEO.id, GEO.display-lable, and HD02_VD01.&lt;/li&gt;
+
+&lt;li&gt;Your file should look like the image below:&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Delete housing data annotation' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-6.png' /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Rename header HD01_VD01 to TotalUnitsHome. Save your document, be sure it&amp;#8217;s stored as a Text CSV &lt;img alt='Spatial Data Carpentry: Census Join - Save as Text CSV' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-8.png' /&gt;. Excel users may have to select Text CSV from a drop-down list. Renaming the headers reduces confusion down the road. Also, notice how there are no spaces in the header name. Removing (or not having) spaces is in the top 10 list of best naming convention practices (on all computer systems.. everywhere in the digital world.. you should never have spaces in your file names or directories). Close the document.&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Rename HD01_VD01 to MeanValueHome' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-7.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Do the same for &lt;strong&gt;home-values.csv&lt;/strong&gt;:&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Navigate to document&lt;/li&gt;
+
+&lt;li&gt;Delete second row with annotations (subheader)&lt;/li&gt;
+
+&lt;li&gt;Delete columns: GEO.id, GEO.display-label, HD02_VD01&lt;/li&gt;
+
+&lt;li&gt;Rename HD01_VD01 to MedianValueHome&lt;/li&gt;
+
+&lt;li&gt;Save your document in Text CSV format &lt;img alt='Spatial Data Carpentry: Census Join - Save as Text CSV' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-8.png' /&gt;&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Wrangle Home Values CSV' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-9.png' /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;You&amp;#8217;re not quite finished with wrangling your data yet. If you have a quick look at your home-values.csv, you&amp;#8217;ll notice there are some invalid fields - number fields that contain non-numeric values. Lines 501 and 502 read 1,000,000+ and should be changed to 1000000.&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Wrangle Home Values CSV' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-10.png' /&gt; Aslo, there are some median home value records with &amp;#8216;-&amp;#8217; and if you read your metadata you would know that:&lt;br /&gt;&lt;br /&gt;&lt;em&gt;An &amp;#8216;-&amp;#8217; entry in the estimate column indicates that either no sample observations or too few sample observations were available to compute an estimate, or ratio of medians cannot be calculated because of one or both of the median estimates falls in the lowest interval or upper interval of an open-ended distribution.&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;Let&amp;#8217;s cleanse this now:&lt;br /&gt; LibreOffice and Excel users: &lt;strong&gt;Find and Replace &amp;#8216;-&amp;#8217; (without single quotes) with NULL&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt;Also, after making these changes the data type of the incorrect records have not changed - they&amp;#8217;re still string/text fields in a numeric universe (only in LibreOffice/Excel, however). We will instruct QGIS on how to read the column data types with a CSVT. Be sure to save your home-values.csv in Text CSV format &lt;img alt='Spatial Data Carpentry: Census Join - Save as Text CSV' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-8.png' /&gt;. &lt;img alt='Spatial Data Carpentry: Census Join - Wrangle Home Values CSV' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-11.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Just wait right there, one does not simply join a string (tract&amp;#8217;s GEOID) to a number (housing data&amp;#8217;s GEO.id2).&lt;br /&gt;&lt;br /&gt; We now have to create our CSVTs (one for each home-values.csv and housing-units.csv). Think of a CSVT as a &amp;#8216;comma-separated value data type&amp;#8217; file. As a reminder, these indicate to QGIS the data types of each column of repsective CSVs.&lt;br /&gt;&lt;br /&gt; Our goal here is to join GEOID from tracts (shapefile) to GEO.id2 from home-values.csv and housing-units.csv.&lt;br /&gt;&lt;br /&gt; Go back into QGIS and open the census-tracts properties and navigate to &lt;strong&gt;Fields&lt;/strong&gt;. Locate GEOID in the table and notice its &lt;strong&gt;Type name&lt;/strong&gt; - &lt;strong&gt;String&lt;/strong&gt; (see image below). With less wrangling we can make GEO.id2 a string for joining purposes. Close the properties window.&lt;br /&gt;&lt;br /&gt; The following steps outline how to create the CSVTs.&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Tract field data types' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-12.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Open a text editr (gedit, VIM, notepad, notepad++) and enter the following:&lt;br /&gt; &lt;code&gt;&amp;quot;String&amp;quot;,&amp;quot;Real(12.0)&amp;quot;&lt;/code&gt;&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Creating a CSVT' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-13.png' /&gt; What this means:&lt;br /&gt; There are two columns in this file separated by a common. The first column indicates string and the second is a real number with length of 12 and precision of 0. While preparing this exercise, QGIS didn&amp;#8217;t like multiplying integers (Field Calculator results with NULL), so we&amp;#8217;re using real number type. 0 precision removes unneccessary zeros after the decimal from real number types, also there are no fractions in the datasets.&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Save this file as &lt;em&gt;home-values.csvt&lt;/em&gt; within the &lt;em&gt;same&lt;/em&gt; directory as &lt;em&gt;home-values.csv&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Luckily, we wrangled both CSVs into the same format, so copy &lt;em&gt;home-values.csvt&lt;/em&gt; and paste it into the &lt;em&gt;same&lt;/em&gt; directory as &lt;em&gt;housing-units.csv&lt;/em&gt;. Rename this pasted file as &lt;em&gt;housing-units.csvt&lt;/em&gt;. Data types, lengths, and precisions will be the same for both files.&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Viewing housing-units.csvt' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-14.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Import CSVs into QGIS.&lt;br /&gt;&lt;br /&gt; Don&amp;#8217;t move just yet, there a little quirk about importing CSVs with CSVTs into QGIS. You &lt;em&gt;cannot&lt;/em&gt; use the &lt;strong&gt;Add Delimited Text Layer&lt;/strong&gt; tool, this does not recognize the CSVT precision and length.&lt;br /&gt;&lt;br /&gt; The best way to import with CSVTs is the drag-and-drop method.&lt;br /&gt;&lt;br /&gt; Drag-and-drop your housing-units.csv and home-values.csv into QGIS. Don&amp;#8217;t touch the associated CSVTs, QGIS reads these during the import process, just &lt;em&gt;don&amp;#8217;t&lt;/em&gt; move these files. Just as we keep all shapefile files in one directory.&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Drag and drop CSVs' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-15.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Your workspace should look like the image below. Save your workspace now.&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - Workspace' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-16.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Now we are able to join our Census tabular data to the tracts shapefile. Join data by opening the &lt;strong&gt;Properties&lt;/strong&gt; of the census-tracts layer and navigating to the &lt;strong&gt;Joins&lt;/strong&gt; tab.&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - view tracts properties' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-17.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Start the first join by clicking the green plus sign &lt;img alt='Spatial Data Carpentry: Census Join - green plus sign' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/qgis/join-plus.png' /&gt;. We&amp;#8217;re joining home-values and housing-units to census-tracts with:&lt;br /&gt;&lt;strong&gt;Join field: GEO.id2&lt;br /&gt;Target field: GEOID&lt;br /&gt;Cache join layer in virtual memory: (checked)&lt;br /&gt;Apply and OK onced both joined&lt;/strong&gt;&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - joining data' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-18.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Open census-tracts &lt;strong&gt;Attribute Table&lt;/strong&gt; and locate the MeanValueHome and TotalUnitsHome fields. Notice they&amp;#8217;ve been renamed and cut-down. We can still decrypt these headings so we&amp;#8217;ll continue on. Close the attributes table.&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - viewing joined data' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-19.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;You have joined the data but it&amp;#8217;s currently being stored in the virtual memory, so we need to save census-tracts (with joined data) as a new shapefile:&lt;br /&gt;&lt;br /&gt;&lt;em&gt;Right-click shapefile &amp;gt; Save As&lt;/em&gt;&lt;br /&gt; &lt;strong&gt;Format: ESRI Shapefile&lt;br /&gt; Save as: tracts-values-units (save in your project directory)&lt;br /&gt; Add saved file to map: (checked)&lt;/strong&gt;&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - save shapefile' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-20.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;We need to convert &lt;em&gt;home-value&lt;/em&gt; to thousands of dollars to prevent &lt;a href='http://en.wikipedia.org/wiki/Integer_overflow' target='_blank'&gt;integer overflow&lt;/a&gt;:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Open tracts-value-units attributes table &amp;gt; Toggle editing mode&lt;/strong&gt; &lt;img alt='Spatial Data Carpentry: Census Join - toggle edits' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/qgis/toggle-editing-mode.png' /&gt; &lt;strong&gt;&amp;gt; Field Calculator&lt;/strong&gt; &lt;img alt='Spatial Data Carpentry: Census Join - field calculator' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/qgis/field-calculator.png' /&gt;&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;Calculate a new field:&lt;br /&gt;Create new field: &lt;strong&gt;(checked)&lt;/strong&gt;&lt;br /&gt;Output field name: &lt;strong&gt;HmValThnds&lt;/strong&gt;&lt;br /&gt;Output field type: &lt;strong&gt;Whole number (integer)&lt;/strong&gt;&lt;br /&gt;Output field width: &lt;strong&gt;10&lt;/strong&gt;&lt;br /&gt;Expression: &lt;strong&gt;&amp;#8220;home-value&amp;#8221; / 1000&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt; &lt;img alt='Spatial Data Carpentry' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-hmvalthnds.png' /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Let&amp;#8217;s now calculate total housing value per census tract (median home value X total housing units).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Configure Field Calculator inputs as follows:&lt;br /&gt; &lt;strong&gt;Create a new field: (checked)&lt;/strong&gt;&lt;br /&gt; &lt;strong&gt;Output field name: TotalValue&lt;/strong&gt;&lt;br /&gt; &lt;strong&gt;Output field type: Decimal number (real)&lt;/strong&gt;&lt;br /&gt; &lt;strong&gt;Output field width: 20&lt;/strong&gt;&lt;br /&gt; &lt;strong&gt;Precision: 0&lt;/strong&gt;&lt;br /&gt; &lt;strong&gt;Expression: &amp;#8220;HmValThnds&amp;#8221; * &amp;#8220;housing-un&amp;#8221;&lt;/strong&gt;&lt;br /&gt;&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - field calculator' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-totalvalue.png' /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Locate &lt;strong&gt;TotalValue&lt;/strong&gt; and confirm the calculation - total home value per Census tract in thoudsands of dollars.&lt;br /&gt;&lt;br /&gt; NOTE: you should still have NULL values given that home-values.csv contains NULL values.&lt;br /&gt;&lt;br /&gt; Be sure to &lt;em&gt;Save edits&lt;/em&gt; &lt;img alt='Spatial Data Carpentry: Census Join - save edits' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/qgis/save-edits.png' /&gt; and disable editing mode (Toggle editing mode) &lt;img alt='Spatial Data Carpentry: Census Join - toggle editing mode' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/qgis/toggle-editing-mode.png' /&gt;. The editing options should now be grayed-out and disabled.&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - TotalValue per tract' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-22.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;You&amp;#8217;ve successfully joined two sets of Census tabular data to a shapefile.&lt;br /&gt;&lt;br /&gt;&lt;/li&gt;
+
+&lt;li&gt;Symbolize tracts-values-units by categorizing by TotalValue and select a color ramp.&lt;br /&gt;&lt;br /&gt;Open style properties: &lt;em&gt;Right-click tract-values-units (layers list) &amp;gt; Properties &amp;gt; Style&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;Style by: &lt;em&gt;Categorized&lt;/em&gt;&lt;br /&gt;&lt;br /&gt;Column: &lt;em&gt;TotalValue&lt;/em&gt;&lt;br /&gt;Color ramp: &lt;em&gt;(select ramp)&lt;/em&gt;&lt;br /&gt;Classify - &amp;#8220;Classification would yield 1422 entries which might not be expected. Continue?&amp;#8221; &lt;em&gt;Yes&lt;/em&gt;&lt;br /&gt; QGIS will inform you that you have a high number of classes, click OK to confirm the categorization.&lt;br /&gt;&lt;br /&gt; We&amp;#8217;ll need to remove NULL values. Locate NULL within the category table (HINT: it contains no values and is blank - look towards the bottom), highlight and click &amp;#8216;Delete&amp;#8217; (not Delete all!) - &amp;#8216;Delete&amp;#8217; removes only selected rows.&lt;br /&gt;&lt;br /&gt; Click Apply then OK to confirm changes.&lt;br /&gt;&lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Symbolize census tracts' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-symbolize.png' /&gt;&lt;/li&gt;
+
+&lt;li&gt;Deactivate census-tracts layer by unchecking its activate box in the layers list.&lt;br /&gt;&lt;br /&gt; Your your results should resemble the image below&lt;br /&gt;&lt;br /&gt; Save your workspace. &lt;br /&gt; &lt;img alt='Spatial Data Carpentry: Census Join - completed' src='http://spatialcarpentry.github.io/data-hygiene/assets/themes/twitter/images/census-join-24.png' /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br /&gt;&lt;hr /&gt;</description>
+                <link>http://spatialcarpentry.github.io/Clean your Data/joining-census-data</link>
+                <guid>http://spatialcarpentry.github.io/Clean your Data/joining-census-data</guid>
+                <pubDate>2002-01-01T00:00:00-07:00</pubDate>
+        </item>
+
+
+</channel>
+</rss>

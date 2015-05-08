@@ -22,9 +22,9 @@ tags : [applications, qgis, quantumgis]
 
 Data for this exercise is located at iPlant Datastore: Community Data/aegis/Spatial-bootcamp/Exercise_2/
 
-- home-values.zip
-- housing-units.zip
-- tl_2014_53_tracts.zip
+- <a href="http://de.iplantcollaborative.org/dl/d/4342752A-9DDF-4BF4-94A9-DD871B8234A4/home-values.zip" target="_blank">Washington home values per tract (home-values.zip)</a>
+- <a href="http://de.iplantcollaborative.org/dl/d/ADC802EF-6AA8-40BE-9DC3-F51C155E4FEB/tl_2014_53_tract.zip" target="_blank">Washington housing units per tract (housing-units.zip)</a>
+- <a href="http://de.iplantcollaborative.org/dl/d/ADC802EF-6AA8-40BE-9DC3-F51C155E4FEB/tl_2014_53_tract.zip" target="_blank">Washington Census tracts shapefile (tl_2014_53_tracts.zip)</a>
 
 ## Procedures
 
