@@ -3,7 +3,7 @@ title: "Data Formatting"
 layout: post
 category : Clean your Data
 tagline: 
-tags : [wrangling]
+tags : [wrangling, formatting]
 ---
 
 ####**Pre-requisites:** Intro to Spatial Data, Data Collection

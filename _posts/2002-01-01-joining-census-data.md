@@ -3,7 +3,7 @@ title: "Census Exercise"
 layout: post
 category : Clean your Data
 tagline: 
-tags : [applications, qgis, quantumgis]
+tags : [csv, qgis, join, data types, field calculator]
 ---
 
 {% include JB/setup %}

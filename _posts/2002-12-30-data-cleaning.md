@@ -30,7 +30,7 @@ It is important to know how to clean up the data sets we download, if we hope to
 
 Its hard to keep anything clean in a dirty kitchen. The same principle applies to our workspaces. If we are testing pieces of a workflow, it will be difficult to prevent ourself from creating an abundance of files, but the difference between a clean workspace and a messy one can be as simple as using standards with our naming conventions. 
 
-If we find workspace starts to look like:
+If we find that our workspace starts to look like:
 
 {% highlight bash %}
 data.csv
