@@ -30,6 +30,20 @@ img {
   max-width: 100%;
 }
 
+/* post headings */
+.head-left {
+  float: left;
+  font-size: 30px;
+  font-weight: 700;
+}
+.head-right {
+  padding-left: 72%;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: 600;
+  color: rgba(0,0,0,0.1);
+}
+
 /* table with no top border (horizontal line splitting <tr>) */
 .table-no-border td {
   border-top: none !important;

@@ -100,7 +100,7 @@ These extra columns can not only make our data hard to read, but it can also mak
 
 ## Data Redundancy
 
-Keeping redundant data in your dataset can seem like a good idea in case we mess up one column or row, then we can copy/paste the original data. This safeguard can introduce inconsistency and corruption into our data if we are not careful.
+Keeping redundant data in your dataset can seem like a good idea in-case we mess up one column or row, then we can copy/paste the original data. This safeguard can introduce inconsistency and corruption into our data if we are not careful.
 
 | id || temp || tempCel |
 |:---:|-|:-------:|-|:--------:|
