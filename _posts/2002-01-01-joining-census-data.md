@@ -8,7 +8,12 @@ tags : [csv, qgis, join, data types, field calculator]
 
 {% include JB/setup %}
 
-## What this exercise covers:
+#### Pre-requisites:
+
+- Setup
+- Basics
+
+#### Objectives:
 
  - Classify data field types for CSV
  - Import CSV into QGIS
@@ -18,13 +23,15 @@ tags : [csv, qgis, join, data types, field calculator]
  - Field calculator
  - Symbolize vector
 
-## Data
+#### Data:
 
-iPlant Data Store: <br>``Community Data/aegis/Spatial-bootcamp/data-hygiene/census-exercise/``
+iPlant Data Store: <br>&nbsp;&nbsp;&nbsp;``Community Data/aegis/Spatial-bootcamp/data-hygiene/census-exercise/``
 
 - [Washington home values per tract (home-values.zip)](http://de.iplantcollaborative.org/dl/d/4342752A-9DDF-4BF4-94A9-DD871B8234A4/home-values.zip)
 - [Washington housing units per tract (housing-units.zip)](http://de.iplantcollaborative.org/dl/d/ADC802EF-6AA8-40BE-9DC3-F51C155E4FEB/tl_2014_53_tract.zip)
 - [Census tracts shapefile (tl_2014_53_tracts.zip)](http://de.iplantcollaborative.org/dl/d/ADC802EF-6AA8-40BE-9DC3-F51C155E4FEB/tl_2014_53_tract.zip Washington) 
+
+----
 
 ## Procedures
 

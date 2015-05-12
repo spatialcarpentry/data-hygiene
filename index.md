@@ -5,14 +5,13 @@ tagline: Clean your data!
 ---
 {% include JB/setup %}
 
-## Goals/Objectives
+## Objectives
 
-After this lesson, you will:
+After completing this section, you will:
 
-  - understand methods for sanitizing data
-  - be familiar with symptoms of dirty data
-  - know the benefits of clean data
-
+- Understand methods for sanitizing data
+- Become familiar with symptoms of dirty data
+- Understand the benefits of clean data
 
 ## Topics
 
@@ -21,6 +20,8 @@ After this lesson, you will:
     <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ol>
+
+----
 
 ## More Resources
 

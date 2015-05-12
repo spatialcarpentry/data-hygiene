@@ -5,16 +5,21 @@ category: Clean your Data
 tags: [wrangling, data janitor]
 ---
 
-####**Pre-requisites** Intro to Spatial Data, Data Collection
+{% include JB/setup %}
 
-####**Objectives**
-  - Understand how to clean datasets
-  - Recognize issues in our datasets
+#### Pre-requisites: 
+
+- Intro to Spatial Data
+- Data Collection
+
+#### Objectives:
+
+- Understand how to clean datasets
+- Recognize issues in our datasets
 
 ----
 
-{% include JB/setup %}
-# Data Hygiene
+## Data Hygiene
 
 In tutorials, and exercises it is common to receive prepared data sets which will easily fit into a workflow. Unfortunately, in real life, data comes in all shapes and sizes, and more often than not, the data we need has quality, consistency or format issues. These can be products of data entry, sensor calibrations, or legacy formats. 
 
