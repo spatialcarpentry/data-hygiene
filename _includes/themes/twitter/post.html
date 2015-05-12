@@ -34,8 +34,29 @@
     <ul class="lessons">
       <h4>Lessons</h4>
       <li><a href="http://spatialcarpentry.github.io/setup/">Setup</a></li>
+      {% if site.repo_name == 'Setup' %}
+        <ol>
+          {% for post in site.posts %}
+            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
       <li><a href="http://spatialcarpentry.github.io/basics/">Basics</a></li>
+      {% if site.repo_name == 'Basics' %}
+        <ol>
+          {% for post in site.posts %}
+            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
       <li><a href="http://spatialcarpentry.github.io/data-collection/">Data Collection</a></li>
+      {% if site.repo_name == 'Data Collection' %}
+        <ol>
+          {% for post in site.posts %}
+            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
       <li><a href="http://spatialcarpentry.github.io/data-hygiene/">Data Hygiene</a></li>
       <li><a href="http://spatialcarpentry.github.io/spatial-analysis/">Spatial Analysis</a></li>
       <li><a href="http://spatialcarpentry.github.io/cartography/">Cartography</a></li>
