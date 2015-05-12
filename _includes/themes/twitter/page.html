@@ -7,17 +7,65 @@
     {{ content }}
   </div>
   <div class="span4">
-    <ul class="lessons">
+        <ol class="lessons">
       <h4>Lessons</h4>
       <li><a href="http://spatialcarpentry.github.io/setup/">Setup</a></li>
+      {% if site.repo_name == 'Setup' %}
+        <ol>
+          {% for post in site.posts %}
+            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
       <li><a href="http://spatialcarpentry.github.io/basics/">Basics</a></li>
+      {% if site.repo_name == 'Basics' %}
+        <ol>
+          {% for post in site.posts %}
+            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
       <li><a href="http://spatialcarpentry.github.io/data-collection/">Data Collection</a></li>
+      {% if site.repo_name == 'Data Collection' %}
+        <ol>
+          {% for post in site.posts %}
+            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
       <li><a href="http://spatialcarpentry.github.io/data-hygiene/">Data Hygiene</a></li>
+      {% if site.repo_name == 'Data Hygiene' %}
+        <ol>
+          {% for post in site.posts %}
+            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
       <li><a href="http://spatialcarpentry.github.io/spatial-analysis/">Spatial Analysis</a></li>
+      {% if site.repo_name == 'Spatial Analysis' %}
+        <ol>
+          {% for post in site.posts %}
+            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
       <li><a href="http://spatialcarpentry.github.io/cartography/">Cartography</a></li>
+      {% if site.repo_name == 'Cartography' %}
+        <ol>
+          {% for post in site.posts %}
+            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
       <li><a href="http://spatialcarpentry.github.io/data-sharing/">Data Sharing</a></li>
-    </ul>
-    {% unless page.tags == empty %}
+      {% if site.repo_name == 'Data Sharing' %}
+        <ol>
+          {% for post in site.posts %}
+            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ol>
+      {% endif %}
+    </ol>    {% unless page.tags == empty %}
       <ul class="tag_box">
       <h4>Tags</h4>
       {% assign tags_list = page.tags %}
