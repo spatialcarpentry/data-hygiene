@@ -33,6 +33,9 @@ img {
 /* post headings */
 .head-left {
   float: left;
+  line-height: 30px;
+}
+.head-left-inner {
   font-size: 30px;
   font-weight: 700;
 }
