@@ -6,11 +6,22 @@ tagline:
 tags : [wrangling, formatting]
 ---
 
-####**Pre-requisites:** Intro to Spatial Data, Data Collection
+#### Pre-requisites:
 
-####**Objectives:** 
-  - Understanding how to wrangle or prepare your data
-  - Recognize common methods to sptail data wrangling
+- Intro to Spatial Data
+- Data Collection
+
+#### Objectives:
+
+- Understanding how to wrangle or prepare your data
+- Recognize common methods to sptail data wrangling
+
+#### Data:
+
+iPlant Data Store: <br>&nbsp;&nbsp;&nbsp;``Community Data/aegis/Spatial-bootcamp/data-hygiene/data-formatting/``
+
+- [data one](link-to-data-one)
+- [data two](link-to-data-two)
 
 ----
 
