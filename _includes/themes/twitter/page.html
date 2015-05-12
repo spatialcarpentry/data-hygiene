@@ -65,7 +65,8 @@
           {% endfor %}
         </ol>
       {% endif %}
-    </ol>    {% unless page.tags == empty %}
+    </ol>
+    {% unless page.tags == empty %}
       <ul class="tag_box">
       <h4>Tags</h4>
       {% assign tags_list = page.tags %}
