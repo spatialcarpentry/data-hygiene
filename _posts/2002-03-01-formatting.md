@@ -18,7 +18,7 @@ tags : [wrangling, formatting]
 
 #### Data:
 
-iPlant Data Store: <br>&nbsp;&nbsp;&nbsp;``Community Data/aegis/Spatial-bootcamp/data-hygiene/data-formatting/``
+iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/data-formatting/``
 
 - [US state boundaries (USA_adm1.shp](http://de.iplantcollaborative.org/dl/d/A80AF5AA-C1FF-4487-AD9B-846E1429F908/USA_adm1.zip)
 - [US West GTOPO30 DEM (us_northwest_gt30w140n90.tif)](http://de.iplantcollaborative.org/dl/d/DD12B0DE-9DDE-4E13-90A3-240BC4DC1C5E/us_northwest_gt30w140n90.tif.zip)
