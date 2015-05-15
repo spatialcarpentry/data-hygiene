@@ -25,7 +25,7 @@ tags : [csv, qgis, join, data types, field calculator]
 
 #### Data:
 
-iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/census-exercise/``
+iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/census-exercise``
 
 - [Washington home values per tract (home-values.zip)](http://de.iplantcollaborative.org/dl/d/D7EEF39A-E297-4059-A67F-33004953E5D2/home-values.zip)
 - [Washington housing units per tract (housing-units.zip)](http://de.iplantcollaborative.org/dl/d/FA037982-639A-44B2-A686-14C15A28E5EF/housing-units.zip)

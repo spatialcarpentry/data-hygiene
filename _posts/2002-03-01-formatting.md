@@ -18,7 +18,7 @@ tags : [wrangling, formatting]
 
 #### Data:
 
-iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/data-formatting/``
+iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/data-formatting``
 
 - [US state boundaries (USA_adm1.shp](http://de.iplantcollaborative.org/dl/d/A80AF5AA-C1FF-4487-AD9B-846E1429F908/USA_adm1.zip)
 - [US West GTOPO30 DEM (us_northwest_gt30w140n90.tif)](http://de.iplantcollaborative.org/dl/d/DD12B0DE-9DDE-4E13-90A3-240BC4DC1C5E/us_northwest_gt30w140n90.tif.zip)
@@ -44,18 +44,35 @@ These methods can be performed using a variety of tools depending on the specifi
 
 ## Exercise
 
+<ol>
+<li>Open QGIS and set projection projection to EPSG:2927:<br><br>
+As a reminder, before starting any project in a GIS program, you should first set the project projection to make sure your data comes in with the same extent. <br>If you don't set the project's projection, the program will use the projection of the first layer added or in the case for QGIS, EPSG:4326.<br><br>Project CRS: <em>Menu Bar > Project Properties > CRS</em><br><br><strong>Enable 'on the fly' CRS transformation</strong>. Search for <strong>2927</strong>.<br><br>Select <strong>NAD83(HARN) / Washington South (ftUS) EPSG:2927</strong> and click <strong>APPLY</strong> then <strong>OK</strong>.<br><br>
+<img alt="projection" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-projection.png" class="screen-shot" /><br><br>
+</li>
+<li>Import US states shapefile:<br>
+<ol>
+<li>iRods access: <br>&nbsp;&nbsp;&nbsp;<code>/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/data-formatting</code><br><br>
+Or download here and <strong>Add Vector Layer</strong> <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png"/>:<br>&nbsp;&nbsp;&nbsp;<a href="link-here">US states boundaries (USA_adm1.shp)</a><br><br>You should now be viewing the US states boundaries in EPSG:2927:<br><br>
+<img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/usa-states.png" alt="USAStates" src="{{BASE_PATH}}{{ASSET_PATH}}/images/usa-states.png" class="screen-shot" />
+</li>
+</ol>
+<li>Extract Washington state boundary:<br><br>
+Since our project is directed at the state of Washington. We should extract the Washington state boundary for our study. The GADM[^7] project provides high-quality boundary data on country, state, and county levels. We can use the US-state level dataset to get the Washington boundary.<br><br>
+<ol>
+<li>Enable <strong>Select Feature</strong> tool: <em>Meun Bar > View > Select > Select Single Feature</em>. Or =, click on <strong>Select Features by area or single click</strong> tool <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/select-feature.png"/> and click on Washington to add to our selection.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/washington-selected.png" alt="washington-selected" src="{{BASE_PATH}}{{ASSET_PATH}}/images/washington-selected.png" class="screen-shot" />
+
+</li>
+</ol>
+</li>
+</li>
+</ol>
+
+<hr>
+
 1. Set project projection to EPSG:2927<br><br> 
-  Before starting any project in a GIS program, you should first set the project projection to make sure your data comes in with the same extent. <br>If you don't set the project's projection, the program will use the projection of the first layer added or EPSG:4326.<br><br>
-  * Apply and OK to save changes.<br><br>
-  <img alt="projection" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-projection.png" class="screen-shot" />
 2. Add the US States shapefile<br><br>
-  Since our project is directed at the state of Washington. We should extract the Washington state boundary for our study. The GADM[^7] project provides high-quality boundary data on country,state and county levels. We can use the US-state level dataset to get the Washington boundary. <br><br>
-  * Select *Add Vector Layer* in the left toolbar
-  * Browse to the USA_adm1.shp layer from the iPlant Data Store<br>
   <img alt="USAStates" src="{{BASE_PATH}}{{ASSET_PATH}}/images/usa-states.png" class="screen-shot" />
 3. Create a layer for the state of Washington 
-  * Within the Layers List, click on USA_adm1 to activate layer tools.
-  * Select Single Feature tool:<br><em>Menu Bar > View > Select > Select Single Feature</em> OR<br>in the top toolbar, select *Select Single Feature*
   * Click on the state of Washington to select it<br>
   <img alt="washington-selected" src="{{BASE_PATH}}{{ASSET_PATH}}/images/washington-selected.png" class="screen-shot" />
   * Right click on the USA_adm1 layer and select *Save Selection As...*
