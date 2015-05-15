@@ -27,9 +27,9 @@ tags : [csv, qgis, join, data types, field calculator]
 
 iPlant Data Store: <br>&nbsp;&nbsp;&nbsp;``Community Data/aegis/Spatial-bootcamp/data-hygiene/census-exercise/``
 
-- [Washington home values per tract (home-values.zip)](http://de.iplantcollaborative.org/dl/d/4342752A-9DDF-4BF4-94A9-DD871B8234A4/home-values.zip)
-- [Washington housing units per tract (housing-units.zip)](http://de.iplantcollaborative.org/dl/d/ADC802EF-6AA8-40BE-9DC3-F51C155E4FEB/tl_2014_53_tract.zip)
-- [Census tracts shapefile (tl_2014_53_tracts.zip)](http://de.iplantcollaborative.org/dl/d/ADC802EF-6AA8-40BE-9DC3-F51C155E4FEB/tl_2014_53_tract.zip Washington) 
+- [Washington home values per tract (home-values.zip)](http://de.iplantcollaborative.org/dl/d/D7EEF39A-E297-4059-A67F-33004953E5D2/home-values.zip)
+- [Washington housing units per tract (housing-units.zip)](http://de.iplantcollaborative.org/dl/d/FA037982-639A-44B2-A686-14C15A28E5EF/housing-units.zip)
+- [Census tracts shapefile (tl_2014_53_tracts.zip)](http://de.iplantcollaborative.org/dl/d/4B2DE464-09D3-431D-9862-6347683ABCCD/tl_2014_53_tract.zip) 
 
 ----
 

@@ -20,8 +20,8 @@ tags : [wrangling, formatting]
 
 iPlant Data Store: <br>&nbsp;&nbsp;&nbsp;``Community Data/aegis/Spatial-bootcamp/data-hygiene/data-formatting/``
 
-- [data one](link-to-data-one)
-- [data two](link-to-data-two)
+- [US state boundaries (USA_adm1.shp](http://de.iplantcollaborative.org/dl/d/A80AF5AA-C1FF-4487-AD9B-846E1429F908/USA_adm1.zip)
+- [US West GTOPO30 DEM (us_northwest_gt30w140n90.tif)](http://de.iplantcollaborative.org/dl/d/DD12B0DE-9DDE-4E13-90A3-240BC4DC1C5E/us_northwest_gt30w140n90.tif.zip)
 
 ----
 
@@ -46,13 +46,7 @@ These methods can be performed using a variety of tools depending on the specifi
 
 1. Set project projection to EPSG:2927<br><br> 
   Before starting any project in a GIS program, you should first set the project projection to make sure your data comes in with the same extent. <br>If you don't set the project's projection, the program will use the projection of the first layer added or EPSG:4326.<br><br>
-  You can set the projection with the following steps:<br><br>
-  <img alt="projectProperties" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-project-properties.png" class="screen-shot" />
-  * In the top navbar go Project > Project Properties
-  * Select CRS in the Left menu
-  * Check *Enable On-the-fly CRS transformation*
-  * Using the Filter, search <em>2927</em> and select *NAD83(HARN)/Washington South(ftUS) EPSG:2927* from the List of Projections.
-  * Apply and OK to save changes.<br>
+  * Apply and OK to save changes.<br><br>
   <img alt="projection" src="{{BASE_PATH}}{{ASSET_PATH}}/images/qgis-projection.png" class="screen-shot" />
 2. Add the US States shapefile<br><br>
   Since our project is directed at the state of Washington. We should extract the Washington state boundary for our study. The GADM[^7] project provides high-quality boundary data on country,state and county levels. We can use the US-state level dataset to get the Washington boundary. <br><br>
@@ -96,6 +90,4 @@ These methods can be performed using a variety of tools depending on the specifi
     + No data values: *0*
   * Be sure to click CLOSE and not OK when exiting tools. Clicking OK will rerun the tool.
     <img alt="projectDEM" src="{{BASE_PATH}}{{ASSET_PATH}}/images/project-dem.png" class="screen-shot" />
-7. **Important!** Save you current project workspace in your project directory. Saving will maintain the configuration of your project workspace. You will be using this project workspace for the following lessons.
-
-### Continue to the next lesson...
+8. Save these files. We'll be using them in later lessons.
