@@ -60,7 +60,16 @@ Or download here and <strong>Add Vector Layer</strong> <img src="{{BASE_PATH}}{{
 Since our project is directed at the state of Washington. We should extract the Washington state boundary for our study. The GADM[^7] project provides high-quality boundary data on country, state, and county levels. We can use the US-state level dataset to get the Washington boundary.<br><br>
 <ol>
 <li>Enable <strong>Select Feature</strong> tool: <em>Meun Bar > View > Select > Select Single Feature</em>. Or =, click on <strong>Select Features by area or single click</strong> tool <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/select-feature.png"/> and click on Washington to add to our selection.<br><br><img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/washington-selected.png" alt="washington-selected" src="{{BASE_PATH}}{{ASSET_PATH}}/images/washington-selected.png" class="screen-shot" />
-
+</li>
+<li>
+Right click on the USA_adm1 layer and select <em>Save Selection As...</em><br>
+<ul>
+<li>Format: ESRI Shapefile </li>
+<li>Save as: washington.shp</li>
+<li>Encoding: UTF-8</li>
+<li>CRS: <em>Browse</em> > NAD83(HARN)/Washington South (ftUS) EPSG:2927</li>
+</ul><br><br>
+<img alt="saveWashington" src="{{BASE_PATH}}{{ASSET_PATH}}/images/save-washington.png" class="screen-shot" />
 </li>
 </ol>
 </li>
@@ -68,35 +77,38 @@ Since our project is directed at the state of Washington. We should extract the 
 </ol>
 
 <hr>
-
+<!--
 1. Set project projection to EPSG:2927<br><br> 
 2. Add the US States shapefile<br><br>
   <img alt="USAStates" src="{{BASE_PATH}}{{ASSET_PATH}}/images/usa-states.png" class="screen-shot" />
 3. Create a layer for the state of Washington 
   * Click on the state of Washington to select it<br>
   <img alt="washington-selected" src="{{BASE_PATH}}{{ASSET_PATH}}/images/washington-selected.png" class="screen-shot" />
-  * Right click on the USA_adm1 layer and select *Save Selection As...*
-      - Format: ESRI Shapefile
+  *       - Format: ESRI Shapefile
       - Save as: washington.shp
       - Encoding: UTF-8
       - CRS: 
           + Selected CRS
           + Browse > *NAD83(HARN)/Washington South (ftUS) EPSG:2927*<br>
-  <img alt="saveWashington" src="{{BASE_PATH}}{{ASSET_PATH}}/images/save-washington.png" class="screen-shot" />
-4. Load the new washington layer<br>
+-->
+
+###### 4. Load the new washington layer<br>
   * Select *Add Vector Layer*
   * Browse to the new washington layer and click *Open*<br>
-5. Remove the USA_adm1 layer from the project <br>
+
+###### 5. Remove the USA_adm1 layer from the project <br>
   Now that we have the Washington layer, we can get rid of the U.S. layer. <br>
   * Right click the layer in the table of contents
   * Select *Remove*
-6. Add the DEM layer from the iPlant data store<br>
+
+###### 6. Add the DEM layer from the iPlant data store<br>
   DEMs or *Digital Elevation Models* are very useful for establishing topological context in a map. DEMs generally come as a raster dataset that consists of elevation values. There are several different byproducts that can be created from DEMs.<br><br>
   This DEM was taken from the GTOPO30 satellite data.<br>
   * In the left toolbar, select *Add Raster Layer*
   * Select *source_files/W140N90.DEM*<br>
   <img alt="demLoad" src="{{BASE_PATH}}{{ASSET_PATH}}/images/dem-load.png" class="screen-shot" />
-7. Project the dem to EPSG:2927
+
+###### 7. Project the dem to EPSG:2927
   * In the top menu, go to Raster > Projections > Warp (Reproject)
   * Use the following options
     + Input File: *W140N90*
@@ -107,4 +119,5 @@ Since our project is directed at the state of Washington. We should extract the 
     + No data values: *0*
   * Be sure to click CLOSE and not OK when exiting tools. Clicking OK will rerun the tool.
     <img alt="projectDEM" src="{{BASE_PATH}}{{ASSET_PATH}}/images/project-dem.png" class="screen-shot" />
-8. Save these files. We'll be using them in later lessons.
+
+###### 8. Save these files. We'll be using them in later lessons.
