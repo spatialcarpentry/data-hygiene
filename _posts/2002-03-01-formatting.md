@@ -20,6 +20,10 @@ tags : [wrangling, formatting]
 
 iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/data-formatting``
 
+<br>
+
+Download files:
+
 - [US state boundaries (USA_adm1.shp](http://de.iplantcollaborative.org/dl/d/A80AF5AA-C1FF-4487-AD9B-846E1429F908/USA_adm1.zip)
 - [US Northwest GTOPO30 DEM (gt30w140n90_us_northwest.tif)](http://de.iplantcollaborative.org/dl/d/57947D2C-2705-41B3-8190-6F130139BAEC/gt30w140n90_us_northwest.tif)
 
@@ -102,7 +106,12 @@ We are able to visualize the DEM in EPSG:2927 thanks to our 'on-the-fly' transfo
 <li>Target: <strong>EPSG:2927</strong></li>
 <li>Resampling Method: <strong>Near</strong></li>
 <li>No data values: <strong>0</strong></li>
-<li>Click <strong>OK</strong> to <em>run</em> the tool, click <strong>CLOSE</strong> to <em>close</em> the tool.</li>
+<li>We need to add a custom parameter into <a href="http://www.gdal.org/gdalwarp.html" target="_blank">gdalwarp</a>: <strong>Target Resolution</strong><br><br>
+By default, GTOPO30 is provided in <em>meters</em>, while <a href="http://spatialreference.org/ref/epsg/2927/" target="_blank">NAD83(HARN) / Washington South (ftUS)</a> (EPSG:2927) is in <em>US survey feet</em>. Rasters <em>must</em> have the <em>same</em> resolution for an analysis to be valid.<br><br>
+Next to the code at the bottom of the window, <em>Click the <strong>Edit tool</strong> <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/gdalwarp-edit.png"/> icon </em>to enable editing the code:<br><br>
+It's best practice to declare a target resolution so we understand what we're working with. Below, we have calculated feet per kilometer: 3280 feet = 1 kilometer. Even though our projection is in US survey feet, we are still working with kilometers.<br><br>
+Add the following code (see the example below): <code>-tr 3280 3280</code><br><br><strong>Do not disable editing once finished</strong>. This will revert changes to the code and our target resolution will not be changed.<br><br>Click <strong>OK</strong> to <em>run</em> the tool, click <strong>CLOSE</strong> to <em>close</em> the tool.<img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/gdalwarp-1.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/gdalwarp-1.png" alt="Spatial Data Bootcamp"/>
+</li>
 </ul>
 <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/formatting-6.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/formatting-6.png" alt="Spatial Data Bootcamp"/>
 </li>
@@ -110,8 +119,9 @@ We are able to visualize the DEM in EPSG:2927 thanks to our 'on-the-fly' transfo
 Open a new project, there's no need to save this current project.<br><br>
 Open the reprojected, or warpped DEM<br><br>
 The default projection should be EPSG:2927 (without 'on-the-fly' transformation), assuming everything went well.<br><br>
+You could also measure the pixels with the <strong>Measure tool</strong> <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/measure-tool.png"/>.<br><br>
 <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/formatting-7.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/formatting-7.png" alt="Spatial Data Bootcamp" />
 </ol>
 
-<p>You should be able to extract a feature from a shapefile and warp (reproject) a raster.</p>
+<p>You should be able to: extract a feature from a shapefile; and warp (reproject) a raster while declaring a target resolution. Close the project without saving. <strong>dem_2927</strong> will be used in the <strong>Landslide Exercise</strong>.</p>
 
