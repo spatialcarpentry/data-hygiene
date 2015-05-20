@@ -16,6 +16,10 @@ tags : [wrangling, formatting]
 - Understanding how to wrangle or prepare your data
 - Recognize common methods to sptail data wrangling
 
+#### Exercise: [Wrangling vector and raster data](#wrangle-exercise)
+
+<!--
+
 #### Data:
 
 iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/data-formatting``
@@ -26,6 +30,8 @@ Download files:
 
 - [US state boundaries (USA_adm1.shp](http://de.iplantcollaborative.org/dl/d/A80AF5AA-C1FF-4487-AD9B-846E1429F908/USA_adm1.zip)
 - [US Northwest GTOPO30 DEM (gt30w140n90_us_northwest.tif)](http://de.iplantcollaborative.org/dl/d/57947D2C-2705-41B3-8190-6F130139BAEC/gt30w140n90_us_northwest.tif)
+
+-->
 
 ----
 
@@ -40,7 +46,7 @@ Data manipulation can be a simple endeavour if the data inputs come in the same 
  * Reclassification - Assigns categorical values to a field based on a the contained values
  * Spatial Joins - Merges datasets based on spatial proximity/overlay
 
-These methods can be performed using a variety of tools depending on the specific needs of the dataset. Here are a few typical choices to aide in data wrangling:
+These methods can be performed using a variety of tools depending on the specific needs of the dataset. <!--Here are a few typical choices to aide in data wrangling:--><a name="wrangle-exercise"></a>
 
 <br>
 
@@ -59,8 +65,8 @@ As a reminder, before starting any project in a GIS program, you should first se
 </li>
 <li>Import US states shapefile:<br>
 <ol>
-<li>iRods access: <br>&nbsp;&nbsp;&nbsp;<code>/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/data-formatting</code><br><br>
-Or download here and <strong>Add Vector Layer</strong> <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png"/>:<br>&nbsp;&nbsp;&nbsp;<a href="link-here">US states boundaries (USA_adm1.shp)</a><br><br>You should now be viewing the US states boundaries in EPSG:2927:<br><br>
+<li>iRods access: <br>&nbsp;&nbsp;&nbsp;<code>/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/data-formatting/USA_adm1.shp</code><br><br>
+Or download here, unzip, and <strong>Add Vector Layer</strong> <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png"/>:<br>&nbsp;&nbsp;&nbsp;<a href="http://de.iplantcollaborative.org/dl/d/A80AF5AA-C1FF-4487-AD9B-846E1429F908/USA_adm1.zip">USA_adm1.zip</a><br><br>You should now be viewing the US states boundaries in EPSG:2927:<br><br>
 <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/formatting-2.png" alt="USAStates" src="{{BASE_PATH}}{{ASSET_PATH}}/images/formatting-2.png" class="screen-shot" />
 </li>
 </ol>
@@ -91,8 +97,8 @@ You should now only have the Washington state boundary in your project<br><br>Zo
 </li>
 <li>Import the US northwest GTOPO30 DEM from the iPlant data store (throught iRods):<br>
 <ol>
-<li>iRods access: <br>&nbsp;&nbsp;&nbsp;<code>/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/data-formatting</code><br><br>
-Or download here and <strong>Add Raster Layer</strong> <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-raster.png"/>:<br>&nbsp;&nbsp;&nbsp;<a href="http://de.iplantcollaborative.org/dl/d/57947D2C-2705-41B3-8190-6F130139BAEC/gt30w140n90_us_northwest.tif">US northwest GTOPO30 DEM (gt30v140n90_us_northwest.tif)</a><br><br>The DEM transforms to EPSG:2927 since we had enabled 'on-the-fly' transformations at the beginning of our workflow. Notice the DEM value -9999, this represents no-data.<br><br>Move the washington layer above the DEM from within the layer list: <em>Click-hold-drag washington to the top of the layer list</em><br><br>Zoom to washington layer: <em>Right-click washington (layer list) > Zoom to Layer</em><br><br>We are now visualizing the boundary of Washington on top of an elevation raster<br><br>
+<li>iRods access: <br>&nbsp;&nbsp;&nbsp;<code>/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/data-formatting/gt30v140n90_us_northwest.tif</code><br><br>
+Or download here and <strong>Add Raster Layer</strong> <img src="{{BASE_PATH}}{{ASSET_PATH}}/images/add-raster.png"/>:<br>&nbsp;&nbsp;&nbsp;<a href="http://de.iplantcollaborative.org/dl/d/57947D2C-2705-41B3-8190-6F130139BAEC/gt30w140n90_us_northwest.tif">gt30v140n90_us_northwest.tif</a><br><br>The DEM transforms to EPSG:2927 since we had enabled 'on-the-fly' transformations at the beginning of our workflow. Notice the DEM value -9999, this represents no-data.<br><br>Move the washington layer above the DEM from within the layer list: <em>Click-hold-drag washington to the top of the layer list</em><br><br>Zoom to washington layer: <em>Right-click washington (layer list) > Zoom to Layer</em><br><br>We are now visualizing the boundary of Washington on top of an elevation raster<br><br>
 <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/formatting-5.png" alt="USAStates" src="{{BASE_PATH}}{{ASSET_PATH}}/images/formatting-5.png" class="screen-shot" />
 </li>
 </ol>
@@ -123,5 +129,6 @@ You could also measure the pixels with the <strong>Measure tool</strong> <img sr
 <img data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/formatting-7.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/formatting-7.png" alt="Spatial Data Bootcamp" />
 </ol>
 
-<p>You should be able to: extract a feature from a shapefile; and warp (reproject) a raster while declaring a target resolution. Close the project without saving. <strong>dem_2927</strong> will be used in the <strong>Landslide Exercise</strong>.</p>
-
+<p>You have just successfully extracted a feature from a shapefile, and warped (reproject) a raster while declaring a target resolution.</p>
+<p><strong>dem_2927</strong> will be used in the <strong>Landslide Exercise</strong>.</p>
+<p>Close the project without saving.</p>
