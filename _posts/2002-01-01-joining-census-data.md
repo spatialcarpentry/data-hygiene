@@ -23,6 +23,9 @@ tags : [csv, qgis, join, data types, field calculator]
  - Field calculator
  - Symbolize vector
 
+#### Exercise: Wrangling Census data
+
+<!--
 #### Data:
 
 iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/census-exercise``
@@ -31,34 +34,43 @@ iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shared/aegis/Spatial-bootcamp
 - [Washington housing units per tract (housing-units.zip)](http://de.iplantcollaborative.org/dl/d/FA037982-639A-44B2-A686-14C15A28E5EF/housing-units.zip)
 - [Census tracts shapefile (tl_2014_53_tracts.zip)](http://de.iplantcollaborative.org/dl/d/4B2DE464-09D3-431D-9862-6347683ABCCD/tl_2014_53_tract.zip) 
 
+-->
+
 ----
 
-## Procedures
+## Exercise
 
-1. Download Exercise_2 data and unpack each zip file:<br>
-![Spatial Data Bootcamp: Unpack zip files]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-unzipped.png)
-1. Import Census Tracts shapefile **tl_2014_53_tract.shp** ![Spatial Data Bootcamp: Census Join - Add vector layer]({{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png).<br>
-![Spatial Data Bootcamp: Census Join - Washington Census tracts]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-1.png)
+Understanding how to manage CSV data in QGIS is a challange many people often encounter. This following exercise will give insight on how to wrangle Census tabular data.
+
+1. Import Washington Census tracks shapfile through iRods: iRods access: <br>&nbsp;&nbsp;&nbsp;``/iplant/home/shared/aegis/Spatial-bootcamp/data-hygiene/census-exercise/tl_2014_53_tracts.shp``<br><br>Or download Washington Census tracts, unzip, and import: [tl_2014_53_tracts.zip](http://de.iplantcollaborative.org/dl/d/4B2DE464-09D3-431D-9862-6347683ABCCD/tl_2014_53_tract.zip)<br><br> 
+1. Download the Census tabular data and unzip each zip file:<br><br>
+[home-values.zip](http://de.iplantcollaborative.org/dl/d/D7EEF39A-E297-4059-A67F-33004953E5D2/home-values.zip)<br>[housing-units.zip](http://de.iplantcollaborative.org/dl/d/FA037982-639A-44B2-A686-14C15A28E5EF/housing-units.zip)<br>
+<img alt="Spatial Data Bootcamp: Unpack zip files" data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-unzipped.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-unzipped.png"/>
+1. If you have not done so already, import Census Tracts shapefile **tl_2014_53_tract.shp** ![Spatial Data Bootcamp: Census Join - Add vector layer]({{BASE_PATH}}{{ASSET_PATH}}/images/add-vector.png).<br>
+<img alt="Spatial Data Bootcamp: Census Join - Washington Census tracts" data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-1.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-1.png"/>
 1. Rename tl_2014_53_tract to census-tracts:<br><br>*Right-click layer > Rename > census-tracts*<br><br>
 1. Open the census-tracts **Attribute table** and locate a column that could possibly be unique to each Census tract used for joining (HINT: it's GEOID):<br><br>*Right-click census-tracts (layer list) > Attribute table*<br><br>Close the Attribute table once you've located the primary key.<br><br>
-![Spatial Data Bootcamp: Census Join - Washington tract attributes]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-2.png)
+<img alt="Spatial Data Bootcamp: Census Join - Washington tract attributes" data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-2.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-2.png"/>
 1. Navigate to your Exercise_2 directory and open housing-units.csv and inspect the data for columns to use for our joins (primary key). HINT: it's GEO.id2.<br><br>Reminder: We can only join data (tabular join) with *exact same* columns. See the tables below:<br>
-![Spatial Data Bootcamp: Census Join - Locate similar columns]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-5.png)
+<img alt="Spatial Data Bootcamp: Census Join - Locate similar columns" data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-5.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-5.png"/>
 1. Clean the data. For the purposes of this exercise, we do not need the removed data. Our objective is to join data and visualize (with minimal data wrangling). In LibreOffice, highlight the row/column, right-click and Delete Selected Columns. Excel should be similar.<br><br>
 For **housing-units.csv**:
 - Remove the second row containing the annotations (subheader). 
 - Delete the columns: GEO.id, GEO.display-lable, and HD02_VD01.
 - Your file should look like the image below:<br>
-![Spatial Data Bootcamp: Census Join - Delete housing data annotation]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-6.png)
+<img alt="Spatial Data Bootcamp: Census Join - Delete housing data annotation" data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-6.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-6.png"/>
+
 1. Rename header HD01_VD01 to TotalUnitsHome. Save your document, be sure it's stored as a Text CSV ![Spatial Data Bootcamp: Census Join - Save as Text CSV]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-8.png). Excel users may have to select Text CSV from a drop-down list. Renaming the headers reduces confusion down the road. Also, notice how there are no spaces in the header name. Removing (or not having) spaces is in the top 10 list of best naming convention practices (on all computer systems.. everywhere in the digital world.. you should never have spaces in your file names or directories). Close the document.<br>
-![Spatial Data Bootcamp: Census Join - Rename HD01_VD01 to MeanValueHome]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-7.png)
+<img alt="Spatial Data Bootcamp: Census Join - Rename HD01_VD01 to MeanValueHome" data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-7.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-7.png"/>
+
 1. Do the same for **home-values.csv**:<br><br>
 * Navigate to document
 * Delete second row with annotations (subheader)
 * Delete columns: GEO.id, GEO.display-label, HD02_VD01
 * Rename HD01_VD01 to MedianValueHome
 * Save your document in Text CSV format ![Spatial Data Bootcamp: Census Join - Save as Text CSV]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-8.png)<br>
-![Spatial Data Bootcamp: Census Join - Wrangle Home Values CSV]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-9.png)
+<img alt="Spatial Data Bootcamp: Census Join - Wrangle Home Values CSV" data-featherlight="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-9.png" src="{{BASE_PATH}}{{ASSET_PATH}}/images/census-join-9.png"/>
+
 1. You're not quite finished with wrangling your data yet. If you have a quick look at your home-values.csv, you'll notice there are some invalid fields - number fields that contain non-numeric values. Lines 501 and 502 read 1,000,000+ and should be changed to 1000000.<br>
 ![Spatial Data Bootcamp: Census Join - Wrangle Home Values CSV]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-10.png)
 Aslo, there are some median home value records with '-' and if you read your metadata you would know that:<br><br>*An '-' entry in the estimate column indicates that either no sample observations or too few sample observations were available to compute an estimate, or ratio of medians cannot be calculated because of one or both of the median estimates falls in the lowest interval or upper interval of an open-ended distribution.*<br><br>Let's cleanse this now:<br> LibreOffice and Excel users: **Find and Replace '-' (without single quotes) with NULL**<br><br>Also, after making these changes the data type of the incorrect records have not changed - they're still string/text fields in a numeric universe (only in LibreOffice/Excel, however). We will instruct QGIS on how to read the column data types with a CSVT. Be sure to save your home-values.csv in Text CSV format ![Spatial Data Bootcamp: Census Join - Save as Text CSV]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-8.png).
@@ -118,9 +130,9 @@ Click Apply then OK to confirm changes.<br><br>
 ![Spatial Data Bootcamp: Symbolize census tracts]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-symbolize.png)
 1. Deactivate census-tracts layer by unchecking its activate box in the layers list.<br><br>
 Your your results should resemble the image below<br><br>
-Save your workspace. <br>
-![Spatial Data Bootcamp: Census Join - completed]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-24.png)
-
 <br>
-
-----
+![Spatial Data Bootcamp: Census Join - completed]({{BASE_PATH}}{{ASSET_PATH}}/images/census-join-24.png)
+<br>
+You have just successfully wrangled and visualized Census tabular data in QGIS. Not an easy task.
+<br><br>
+You do not need to save your workspace.
